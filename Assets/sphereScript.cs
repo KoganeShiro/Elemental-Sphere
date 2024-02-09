@@ -10,17 +10,17 @@ public class sphereScript : MonoBehaviour
     public Sprite spriteIce;
     private SpriteRenderer spriteRenderer;
     private float previousYposition;
-    // Start is called before the first frame update
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         previousYposition = transform.position.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float currentYPosition = transform.position.y;
+        float currentXPosition = transform.position.x;
 
         if (currentYPosition >= 7.4)
         {
@@ -36,10 +36,46 @@ public class sphereScript : MonoBehaviour
         else
             myRigidBody.gravityScale = 1;
 
-        //Touches pour bouger le personnage
-        if (Input.GetKeyDown(KeyCode.UpArrow) == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
             myRigidBody.velocity = Vector2.up * velocity;
-        if (Input.GetKeyDown(KeyCode.DownArrow) == true)
+        if (Input.GetKeyDown(KeyCode.DownArrow))
             myRigidBody.velocity = Vector2.down * velocity;
+
+        if (currentXPosition <= -15.5)
+            Debug.Log("Le personnage est mort.");
+        
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (spriteRenderer.sprite == spriteFlame)
+        {
+            if (collision.gameObject.name == "ice_plate" || collision.gameObject.name == "water_plate")
+            {
+                Debug.Log("Le personnage est mort.");
+                // Ajoutez ici le code pour gérer la mort du personnage
+            }
+            // Si le personnage est de type "spriteFlame" et entre en collision avec une plateforme de feu,
+            // on désactive la collision entre le personnage et la plateforme de feu.
+            else if (collision.gameObject.name == "fire_plate")
+            {
+                // Désactiver la collision entre le personnage et la plateforme de feu
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
+            }
+        }
+        else if (spriteRenderer.sprite == spriteIce)
+        {
+            if (collision.gameObject.name == "fire_plate" || collision.gameObject.name == "lava_plate")
+            {
+                Debug.Log("Le personnage est mort.");
+                // Ajoutez ici le code pour gérer la mort du personnage
+            }
+            else if (collision.gameObject.name == "water_plate")
+            {
+                // Désactiver la collision entre le personnage et la plateforme de feu
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
+            }
+        }
     }
 }
