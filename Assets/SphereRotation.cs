@@ -16,9 +16,7 @@ public class SphereRotation : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Contrôle du mouvement horizontal
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(moveHorizontal, 0f);
-        rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
+        // Supprimer le mouvement horizontal
+        rb.velocity = new Vector2(0f, rb.velocity.y);
     }
 }

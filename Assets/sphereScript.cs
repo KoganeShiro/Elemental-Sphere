@@ -44,12 +44,13 @@ public class sphereScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow))
             myRigidBody.velocity = Vector2.down * velocity;
 
-        if (currentXPosition <= -15.5)
+        if (currentXPosition <= -13.5)
         {
             Debug.Log("Le personnage est mort.");
 
             // Activez le GameOverRenderer dans le script GameOverScript
-            gameOverObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameOverObject.GetComponent<GameOverScript>().isOff = true;
+            Destroy(gameObject);
         }
 
     }
@@ -62,7 +63,8 @@ void OnCollisionEnter2D(Collision2D collision)
         {
             Debug.Log("Le personnage est mort.");
             // Ajoutez ici le code pour gérer la mort du personnage
-            gameOverObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameOverObject.GetComponent<GameOverScript>().isOff = true;
+            Destroy(gameObject);
         }
         // Si le personnage est de type "spriteFlame" et entre en collision avec une plateforme de feu,
         // on désactive la collision entre le personnage et la plateforme de feu.
@@ -78,7 +80,8 @@ void OnCollisionEnter2D(Collision2D collision)
         {
             Debug.Log("Le personnage est mort.");
             // Ajoutez ici le code pour gérer la mort du personnage
-            gameOverObject.GetComponent<SpriteRenderer>().enabled = true;
+            gameOverObject.GetComponent<GameOverScript>().isOff = true;
+            Destroy(gameObject);
         }
         else if (collision.gameObject.name == "water_plate")
         {
