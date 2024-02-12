@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Normal.unity
     guid: 99ff1572c40a98f229c9654edb23d353
   - enabled: 1
+    path: Assets/Scenes/Damien.unity
+    guid: 4ff1a8f10acbab0519c2e16afd75f411
+  - enabled: 1
     path: Assets/Scenes/Infinite.unity
     guid: 4cc7d649fff518b3a8e6358bc969e118
   - enabled: 1
