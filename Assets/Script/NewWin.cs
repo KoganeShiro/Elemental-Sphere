@@ -7,6 +7,6 @@ public class ChangeWin : MonoBehaviour
 {
     public void play_game()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(2);
     }
 }

@@ -10,6 +10,7 @@ public class sphereScript : MonoBehaviour
     public Sprite spriteIce;
     private SpriteRenderer spriteRenderer;
     private float previousYposition;
+    public GameObject enemyAttack;
     private GameOverScript gameOverScript; // Référence au script GameOverScript
     public GameObject gameOverObject; // Référence au GameObject "GameOver"
     void Start()
@@ -55,12 +56,75 @@ public class sphereScript : MonoBehaviour
 
     }
 
-void OnCollisionEnter2D(Collision2D collision)
+/*void OnCollisionEnter2D(Collision2D collision)
 {
     if (spriteRenderer.sprite == spriteFlame)
     {
-        if (collision.gameObject.name == "ice_plate" || collision.gameObject.name == "water_plate")
+        HandleFlameCollisions(collision);
+    }
+    else if (spriteRenderer.sprite == spriteIce)
+    {
+        HandleIceCollisions(collision);
+    }
+}
+
+void HandleFlameCollisions(Collision2D collision)
+{
+    string collidedObjectName = collision.gameObject.name;
+
+    switch (collidedObjectName)
+    {
+        case "ice_plate":
+        case "water_plate" || "water-attack":
+            HandlePlayerDeath();
+            break;
+    }
+    if (collidedObjectName == "fire_plate")
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
+    if (collidedObjectName == "water-attack")
+        HandlePlayerDeath();
+}
+
+void HandleIceCollisions(Collision2D collision)
+{
+    string collidedObjectName = collision.gameObject.name;
+
+    switch (collidedObjectName)
+    {
+        case "fire_plate":
+        case "lava_plate":
+            HandlePlayerDeath();
+            break;
+
+        case "water_plate":
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
+            break;
+
+        case "fire-attack":
+        case "ice-attack":
+            HandlePlayerDeath();
+            break;
+    }
+}
+
+void HandlePlayerDeath()
+{
+    Debug.Log("Le personnage est mort.");
+    
+    gameOverObject.GetComponent<GameOverScript>().isOff = true;
+    Destroy(gameObject);
+}
+}*/
+
+
+void OnCollisionEnter2D(Collision2D collision)
+{
+    Debug.Log(collision.gameObject.name);
+    if (spriteRenderer.sprite == spriteFlame)
+    {
+        if (collision.gameObject.name == "ice_plate" || collision.gameObject.name == "water_plate" || collision.gameObject.name == "ice-attack(Clone)" || collision.gameObject.name == "water-attack(Clone)")
         {
+            Debug.Log("dfsjhsfdsjd");
             Debug.Log("Le personnage est mort.");
             // Ajoutez ici le code pour gérer la mort du personnage
             gameOverObject.GetComponent<GameOverScript>().isOff = true;
@@ -72,6 +136,13 @@ void OnCollisionEnter2D(Collision2D collision)
         {
             // Désactiver la collision entre le personnage et la plateforme de feu
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
+        }
+        else if (collision.gameObject.name == "ice-attack" || collision.gameObject.name == "water-attack")
+        {
+            Debug.Log("Le personnage est mort ?.");
+            // Ajoutez ici le code pour gérer la mort du personnage
+            gameOverObject.GetComponent<GameOverScript>().isOff = true;
+            Destroy(gameObject);
         }
     }
     else if (spriteRenderer.sprite == spriteIce)
@@ -88,12 +159,19 @@ void OnCollisionEnter2D(Collision2D collision)
             // Désactiver la collision entre le personnage et la plateforme d'eau
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
         }
-    }
-    // Réactiver la collision lorsque le personnage quitte la plateforme d'eau
-    else if (collision.gameObject.name == "water_plate")
-    {
-        // Réactiver la collision entre le personnage et la plateforme d'eau
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, false);
+        else if (collision.gameObject.name == "fire-attack(Clone)" || collision.gameObject.name == "ice-attack(Clone)")
+        {
+            Debug.Log("Le personnage est mort ?.");
+            // Ajoutez ici le code pour gérer la mort du personnage
+            gameOverObject.GetComponent<GameOverScript>().isOff = true;
+            Destroy(gameObject);
+        }
+        // Réactiver la collision lorsque le personnage quitte la plateforme d'eau
+        else if (collision.gameObject.name == "water_plate")
+        {
+            // Réactiver la collision entre le personnage et la plateforme d'eau
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, false);
+        }
     }
 }
 }
