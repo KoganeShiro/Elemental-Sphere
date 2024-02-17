@@ -14,18 +14,20 @@
 
 
 # Normal Mode
+## Stuff to consider
+- fusion of the elements
+- opening and ending cinematic
+- How to get through the story without proper dialogue
 
-- fusion des elements
-- cinematic d'ouverture
 
 ## Story
-tuto after cinematic
-mc is fighting the boss
-the boss is trying to absorb the mc
-he failed and is becoming weak like the mc that has part of them in different universe/word
+Tuto, where the MC is ultra powerful
+cinematic sequence, the main character engages in a fierce battle against the boss.
+The boss attempts to absorb the protagonist, but the attempt fails, resulting in the boss weakening.
+Both the main character and the boss now exhibit signs of being fragmented across different universes or worlds.
 
+As the game concludes, a scene unfolds where the shadow representing the boss gradually departs, allowing light to return to the environment.
 
-cinematic de fin where the shadow is leaving and the light return
 ## Characters
 Elements = fire, water, ice, magma, earth, wind, light, shadow, plant, metal, poison, health
 #### feu-glace
@@ -37,4 +39,19 @@ Elements = fire, water, ice, magma, earth, wind, light, shadow, plant, metal, po
 #### poison-soin
 
 #### terre-air=vent
+
+
+### Enemy
+Maybe have some kind of curse
+Wants the power of the mc
+Let them restore his power
+At the end, they are absorb into the mc and heals
+
+
 # Infinite Mode
+a mode where the mc need to go as far as possible in the game.
+A leader-board will be here to know the better score
+As the time goes, the speed and the difficulty will also increase
+Make the screen rotate
+Put some orbs that will change the mc to different universe
+
