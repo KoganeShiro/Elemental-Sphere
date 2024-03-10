@@ -16,8 +16,9 @@ All the assets were created by [@KoganeShiro](https://github.com/KoganeShiro) du
 The normal mode was originally a story mode but we didn't manage to do it so on the menu you will only be able do the infinite mode which is an endless runner or side-scrolling.
 
 #
-[comment]: <> (
+<!---
 ### What now ?
 As we liked our idea, we decided to continue the project implementing things we didn't get to implement and add even more to make a real game that could be played.
 
-#)
+#
+-->
