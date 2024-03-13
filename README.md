@@ -6,7 +6,7 @@ In the context of a [GameJam](https://en.wikipedia.org/wiki/Game_jam) organized 
 
 We accomplished this within a week, utilizing Unity.
 
-As complete beginners in C# and Unity, we took this opportunity to learn and apply these tools for our project.
+As complete beginners in C# and Unity, we took this opportunity to learn and practice game developpement for our project.
 
 Most of the script are made by [@Lapinew](https://github.com/Lapinew)
 All the assets were created by [@KoganeShiro](https://github.com/KoganeShiro) during the development process.
@@ -20,5 +20,6 @@ The normal mode was originally a story mode but we didn't manage to do it so on 
 ### What now ?
 As we liked our idea, we decided to continue the project implementing things we didn't get to implement and add even more to make a real game that could be played.
 
+### Quick Start
 #
 -->
