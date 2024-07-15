@@ -17,6 +17,13 @@ The normal mode was originally a story mode but we didn't manage to do it so on 
 
 The goal is to survive with the best time, which is the longest time possible
 
+![image](https://github.com/user-attachments/assets/f5f27bc5-55f8-430d-80f4-d23e495f9cb6)
+![image](https://github.com/user-attachments/assets/b827bfb2-46fb-4007-9349-735d1a78ef10)
+![image](https://github.com/user-attachments/assets/7f818d6e-9580-4e27-84ab-384892fd2fbc)
+![image](https://github.com/user-attachments/assets/67000fb1-1eb1-453c-acd6-1d6b8d480afc)
+
+
+
 #
 <!---
 ### What now ?
